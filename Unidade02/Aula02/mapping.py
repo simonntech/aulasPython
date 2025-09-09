@@ -12,3 +12,8 @@ dici_2 = {
     'idade': 27}
 print(dici_2)
 
+#exemplo 3 - dicionário com uma lista de tuplas
+dici_3 = dict([
+    ('nome', 'Maria'), 
+    ('idade', 18)])
+print(dici_3)
