@@ -46,3 +46,19 @@ def buscarPorTitulo():
             break
         if not encontrado:
             print(f'O livro "{tituloBusca}" não foi encontrado...')
+
+#Gerar gráfico
+
+def gerarGraficoGenero():
+    if not listaLivros:
+        print('\nNão há livros cadastrados.')
+        return
+    
+    quantidadeGeneros = {}
+
+    for livro in listaLivros:
+        genero = livro.genero.capitalize()
+        quantidadeGeneros[genero] = quantidadeGeneros.get(genero, 0) + 1
+
+    generos = list(quantidadeGeneros.keys())
+    quantidades=list(quantidadeGeneros.values())
