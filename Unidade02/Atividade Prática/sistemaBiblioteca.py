@@ -62,3 +62,42 @@ def gerarGraficoGenero():
 
     generos = list(quantidadeGeneros.keys())
     quantidades=list(quantidadeGeneros.values())
+
+    plt.figure(figsize=(10,6))
+    plt.bar(generos, quantidades, color='skyblue')
+    plt.xlabel('Gênero')
+    plt.ylabel('Quantidade de livros')
+    plt.title('Quantidade de livros por Gênero')
+    plt.xticks(rotation=45, ha='right')
+    plt.tight_layout()
+    plt.show()
+
+
+# função principal
+def main():
+    while True:
+        print('\n --- Sistema Biblioteca ---')
+        print('1. Cadastrar novo Livro')
+        print('2. Listar Livros')
+        print('3. Buscar livro')
+        print('4. Gerar gráfico de livros por gênero')
+        print('5. Sair')
+
+        escolha = input('Digite sua escolha (1-5):')
+
+        if escolha == '1':
+            cadastrarLivro()
+        elif escolha == '2':
+            listarLivros()
+        elif escolha == '3':
+            buscarPorTitulo()
+        elif escolha == '4':
+            gerarGraficoGenero()
+        elif escolha == '5':
+            print('Fechando sistema.')
+            break
+        else:
+            print('Escolha inválida. Por favor, digite um número entre 1 a 5 das opções.')
+
+if __name__ == '__main__':
+    main()
